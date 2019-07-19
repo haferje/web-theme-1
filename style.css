@@ -1,0 +1,273 @@
+@import url("reset.css");
+
+body            { font-family: sans-serif; background: #eee; color: #666; }
+a, h1, h2       { color: #666; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; font-weight: bold; }
+h1              { border-bottom: 0.06em solid #ccc; font-size: 2.2em; padding: 0.2em 0em; }
+h2              { font-size: 1.5em; }
+#container {
+	position: relative;
+	width: 40em;
+	padding: 1.75em;
+	margin: 2em auto; /* center it */
+	overflow: auto; /* expand parent height to children: http://stackoverflow.com/questions/384145/css-expand-parent-div-to-child-height; */
+}
+#page {
+	position:absolute;
+	/* stretches to all sides of parent, give room for the shadow */
+    top: 0.75em;
+    right: 0.75em;
+    left: 0.75em;
+    bottom: 0.75em;
+    /*
+    	CSS3 styles from:
+    	http://www.css3.me/
+    */
+	background: white;
+	background-color: #ffffff;
+	border: 4px solid #999999;
+	-moz-border-radius: 14px;
+	-webkit-border-radius: 14px;
+	border-radius: 14px;
+	/*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+	-moz-box-shadow: 0px 0px 18px #000000;
+	-webkit-box-shadow: 0px 0px 18px #000000;
+	box-shadow: 0px 0px 18px #000000;
+	/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#000000');
+	/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+	/*Element must have a height (not auto)*/
+	/*All filters must be placed together*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#000000')";
+	/*Element must have a height (not auto)*/
+	/*All filters must be placed together*/
+	background-image: -moz-linear-gradient(top, #ffffff, #000000);
+	background-image: -ms-linear-gradient(top, #ffffff, #000000);
+	background-image: -o-linear-gradient(top, #ffffff, #000000);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#000000));
+	background-image: -webkit-linear-gradient(top, #ffffff, #000000);
+	background-image: linear-gradient(top, #ffffff, #000000);
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	/*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+	/*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+	opacity: 0.32;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 32);
+	/*-ms-filter must come before filter*/
+	filter: alpha(opacity = 32);
+	/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+	/*All filters must be placed together*/
+}
+#content {
+	position:relative;
+}
+#footer {
+	padding-top: 1.2em;
+	text-align: center;
+	font-size: 0.7em;
+	color: #888;
+}
+#metanav {
+	font-size: 0.8em;
+	padding: 0.3em;
+	margin-bottom: 1em;
+}
+#metanav a { margin-right: 0.5em; }
+#metanav a:last-child { /* or .metanav a:last-of-type */
+	margin-right: 0em;
+	float:right;
+}
+.entries        { list-style: none; margin: 0; padding: 0; }
+.entries li     { margin: 0.8em 1.2em; }
+.entries li h2  { margin-left: -1em; }
+.add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }
+.add-entry dl   { font-weight: bold; }
+.flash          { background: #CEE5F5; padding: 0.5em;
+                  border: 1px solid #AACBE2; }
+.error          { background: #F0D6D6; padding: 0.5em; }
+
+/*
+	created by:
+	http://css3button.net/
+*/
+input[type="button"], input[type="submit"] {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	padding: 6px 15px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 3px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.1),
+		0px 1px 0px rgba(255,255,255,1);
+}
+
+input[type="submit"] {
+	border: 1px solid #56b54f;
+	background: -moz-linear-gradient(
+		top,
+		#a5f09e 0%,
+		#53b856);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#a5f09e),
+		to(#53b856));
+}
+input[type="submit"]:hover {
+	background: -moz-linear-gradient(
+		top,
+		#8bf582 0%,
+		#21ad23);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#8bf582),
+		to(#21ad23));
+}
+input[type="submit"]:active {
+	background: -moz-linear-gradient(
+		top,
+		#21ad23 0%,
+		#8bf582);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#21ad23),
+		to(#8bf582));
+}
+
+input[type="button"] {
+	border: 1px solid #92a391;
+	background: -moz-linear-gradient(
+		top,
+		#cededb 0%,
+		#95aba5);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#cededb),
+		to(#95aba5));
+}
+input[type="button"]:hover {
+	background: -moz-linear-gradient(
+		top,
+		#bad6d0 0%,
+		#718f86);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#bad6d0),
+		to(#718f86));
+}
+input[type="button"]:active {
+	background: -moz-linear-gradient(
+		top,
+		#718f86 0%,
+		#bad6d0);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#718f86),
+		to(#bad6d0));
+}
+
+input[type="button"].cancel {
+	border: 1px solid #eb7c7c;
+	background: -moz-linear-gradient(
+		top,
+		#e6b1b8 0%,
+		#ed5c63);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#e6b1b8),
+		to(#ed5c63));
+}
+input[type="button"].cancel:hover {
+	background: -moz-linear-gradient(
+		top,
+		#e899a3 0%,
+		#f24851);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#e899a3),
+		to(#f24851));
+}
+input[type="button"].cancel:active {
+	background: -moz-linear-gradient(
+		top,
+		#f24851 0%,
+		#e899a3);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#f24851),
+		to(#e899a3));
+}
+
+input[type="button"].info {
+	border: 1px solid #937ceb;
+	background: -moz-linear-gradient(
+		top,
+		#c6c5eb 0%,
+		#8d87e8);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#c6c5eb),
+		to(#8d87e8));
+}
+input[type="button"].info:hover {
+	background: -moz-linear-gradient(
+		top,
+		#b2b0eb 0%,
+		#726ae6);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#b2b0eb),
+		to(#726ae6));
+}
+input[type="button"].info:active {
+	background: -moz-linear-gradient(
+		top,
+		#726ae6 0%,
+		#b2b0eb);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#726ae6),
+		to(#b2b0eb));
+}
+
+/* in FireFox, passwords will not style without enclosing double quotes, but others will */
+input[type="text"], input[type="password"], textarea {
+	border: 1px inset lightgray;
+	border-radius: 4px;
+	padding: 3px;
+	margin: 4px 0px;
+	-moz-box-shadow:
+		0px 1px 6px rgba(000,000,000,0.6),
+		inset 0px 0px 6px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 6px rgba(000,000,000,0.6),
+		inset 0px 0px 6px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 6px rgba(000,000,000,0.6),
+		inset 0px 0px 6px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.1),
+		0px 1px 0px rgba(255,255,255,1);
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+	-moz-box-shadow:
+		0px 1px 6px rgba(000,000,255,0.6),
+		inset 0px 0px 6px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 6px rgba(000,000,255,0.6),
+		inset 0px 0px 6px rgba(255,255,255,1);
+	box-shadow:
+		0px 1px 6px rgba(000,000,255,0.6),
+		inset 0px 0px 6px rgba(255,255,255,1);
+}
